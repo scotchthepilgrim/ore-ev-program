@@ -1,0 +1,28 @@
+[package]
+name = "solana-pinocchio-starter"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pinocchio = { git = "https://github.com/anza-xyz/pinocchio.git" }
+pinocchio-log = { git = "https://github.com/anza-xyz/pinocchio.git" }
+pinocchio-pubkey = { git = "https://github.com/anza-xyz/pinocchio.git" }
+pinocchio-system = { git = "https://github.com/anza-xyz/pinocchio.git" }
+shank = "0.4.2"
+bytemuck = { version = "1.23.0", features = ["derive"] }
+
+[dev-dependencies]
+solana-sdk = "2.2.1"
+mollusk-svm = "0.4.0"
+mollusk-svm-bencher = "0.4.0"
+
+
+[features]
+no-entrypoint = []
+std = []
+test-default = ["no-entrypoint", "std"]
+bench-default = ["no-entrypoint", "std"]
+
